@@ -748,7 +748,7 @@ describe('webContents module', () => {
     });
   });
 
-  describe('startDrag({file, icon})', () => {
+  xdescribe('startDrag({file, icon})', () => {
     it('throws errors for a missing file or a missing/empty icon', () => {
       const w = new BrowserWindow({ show: false });
       expect(() => {
