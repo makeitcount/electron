@@ -80,6 +80,14 @@ app.whenReady().then(async () => {
     suite.on('suite', attach);
   });
 
+  mocha.suite.on('pre-require', function(context, file, mocha){
+    console.log(`About to require ${file}.`)
+  });
+
+  mocha.suite.on('post-require', function(context, file, mocha){
+    console.log(`Done requiring ${file}.`)
+  });
+
   if (!process.env.MOCHA_REPORTER) {
     mocha.ui('bdd').reporter('tap');
   }
